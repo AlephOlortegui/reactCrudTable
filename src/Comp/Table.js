@@ -2,14 +2,33 @@ import { Link } from "react-router-dom"
 import useFetch from "../Custom/useFetch"
 import AlertMsg from "../Utilities/AlertMsg"
 import Spinner from "../Utilities/Spinner"
+import { useState } from "react"
 
 const Table = () => {
   const {data, isPending, error} = useFetch('http://localhost:8000/employee')
+
+  const [query, setQuery] = useState('')
+
+  const filterTable = (data) => { 
+    return data.filter(item => {
+      return (
+        item.username.toLowerCase().includes(query) ||
+        item.email.toLowerCase().includes(query) ||
+        item.phone.includes(query)
+      )
+    })
+   }
+
   return (
     <>
       <div className="row justify-content-between align-items-center my-4">
           <div className="col-4">
               <h1 className="text-start pb-1">Table page</h1>
+          </div>
+          <div className="col-7">
+              <input type="text" value={query} className='form-control'
+                  placeholder='Serach by name, email or phone'
+                  onChange={(e) => setQuery(e.target.value)}/>
           </div>
       </div>
       <table className="table table-hover">
@@ -30,7 +49,7 @@ const Table = () => {
                 <Spinner />
               </td>
             </tr>
-           ) : error ? (
+           ) : (error || filterTable(data).length === 0) ? (
             <tr>
               <td colSpan={5}>
                 <AlertMsg />
@@ -38,7 +57,7 @@ const Table = () => {
             </tr>
            ) : (
               <>
-                {data.map((row,index) => (
+                {filterTable(data).map((row,index) => (
                   <tr key={row.id}>
                       <td>{index+1}</td>
                       <td>{row.username}</td>
