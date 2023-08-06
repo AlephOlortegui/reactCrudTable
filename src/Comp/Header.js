@@ -1,10 +1,11 @@
 // import { Link } from "react-router-dom"
 import NavLink from "../Custom/NavLink"
+import Title from "../Custom/Title"
 
 const Header = () => {
   return (
     <header className='d-flex justify-content-around align-items-center'>
-      <h3>Crud Operations</h3>
+      <Title level="h3">Crud Operations</Title>
       <nav>
        {/*  <Link className='mx-3' to="/">Home</Link>
         <Link className='mx-3' to="/create">Create</Link> */}

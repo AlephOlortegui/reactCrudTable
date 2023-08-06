@@ -3,6 +3,7 @@ import useFetch from "../Custom/useFetch"
 import AlertMsg from "../Utilities/AlertMsg"
 import Spinner from "../Utilities/Spinner"
 import { useState } from "react"
+import Title from "../Custom/Title"
 
 const Table = () => {
   const {data, isPending, error} = useFetch('http://localhost:8000/employee')
@@ -23,7 +24,7 @@ const Table = () => {
     <>
       <div className="row justify-content-between align-items-center my-4">
           <div className="col-4">
-              <h1 className="text-start pb-1">Table page</h1>
+              <Title className="text-start pb-1">Table page</Title>
           </div>
           <div className="col-7">
               <input type="text" value={query} className='form-control'

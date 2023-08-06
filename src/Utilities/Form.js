@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import Title from "../Custom/Title";
 
 const Form = ({title, data, handleChange,handleSubmit}) => {
   const {username, email, phone} = data;
   const navigateTo = useNavigate();
   return (
     <form className='form' onSubmit={handleSubmit}>
-      <h1 className="text-center py-2">{title}</h1>
+      <Title className="text-center py-2">{title}</Title>
       <div className="form-floating mb-3">
           <input type="text" placeholder="Name" id="fName" required
           className='form-control' name='username'
