@@ -10,25 +10,30 @@ import NotFound from './Utilities/NotFound';
 import Detail from './Crud/Detail';
 import Create from './Crud/Create';
 import Edit from './Crud/Edit';
+import { ThemeProvider } from './context/ThemeProvider';
+import ThemeBtn from './Comp/ThemeBtn';
 
 function App() {
   return (
-    <BrowserRouter>
-    <div className="bg-theme py-3">
-      <div className="crud-container text-center mx-auto">
-        <Header />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Table />}/>
-            <Route path='/create' element={<Create />} />
-            <Route path='/details/:id' element={<Detail />} />
-            <Route path='/edit/:id' element={<Edit />} />
-            <Route path='*' element={<NotFound />} />
-          </Routes>
+    <ThemeProvider>
+      <BrowserRouter>
+        <div className="bg-theme py-3">
+          <div className="crud-container text-center mx-auto">
+            <Header />
+            <ThemeBtn />
+            <div className="container">
+              <Routes>
+                <Route path="/" element={<Table />}/>
+                <Route path='/create' element={<Create />} />
+                <Route path='/details/:id' element={<Detail />} />
+                <Route path='/edit/:id' element={<Edit />} />
+                <Route path='*' element={<NotFound />} />
+              </Routes>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
