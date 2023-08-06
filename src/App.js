@@ -8,6 +8,7 @@ import Header from './Comp/Header';
 import Table from './Comp/Table';
 import NotFound from './Utilities/NotFound';
 import Detail from './Crud/Detail';
+import Create from './Crud/Create';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<Table />}/>
+            <Route path='/create' element={<Create />} />
             <Route path='/details/:id' element={<Detail />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
