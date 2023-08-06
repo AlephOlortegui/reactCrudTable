@@ -13,3 +13,8 @@
   max-width: 400px;
   margin: 0 auto;
 }
+/* links */
+.notActive{
+  text-decoration: none;
+  color: #000;
+}
