@@ -19,3 +19,11 @@
 ```bash
  npm i react-router-dom json-server bootstrap-icons bootstrap
 ```
+
+# Problems I run to
+- in App.js WE CANNOT USE
+ThemeContext and ThemeProvider in the same component it crashes the app.
+
+- dependencie array un useFormFx, I put the whole code inside of
+useEffect
+
