@@ -12,7 +12,7 @@
 /build
 
 # mines
-/src/data/db.json
+# /src/data/db.json
 
 # misc
 .DS_Store
