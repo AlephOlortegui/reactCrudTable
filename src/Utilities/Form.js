@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 const Form = ({title, data, handleChange,handleSubmit}) => {
   const {username, email, phone} = data;
+  const navigateTo = useNavigate();
   return (
     <form className='form' onSubmit={handleSubmit}>
       <h1 className="text-center py-2">{title}</h1>
@@ -26,6 +29,7 @@ const Form = ({title, data, handleChange,handleSubmit}) => {
       </div>
       <div className="d-grid gap-2 col-6 mx-auto">
           <button className="btn btn-primary" type="submit">Submit Information</button>
+          {title === 'Edit' && (<button type="button" className="btn btn-danger" onClick={() => navigateTo(-1)}>Cancel</button>)}
       </div>
     </form>
   )

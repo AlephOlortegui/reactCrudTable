@@ -9,6 +9,7 @@ import Table from './Comp/Table';
 import NotFound from './Utilities/NotFound';
 import Detail from './Crud/Detail';
 import Create from './Crud/Create';
+import Edit from './Crud/Edit';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<Table />}/>
             <Route path='/create' element={<Create />} />
             <Route path='/details/:id' element={<Detail />} />
+            <Route path='/edit/:id' element={<Edit />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>
