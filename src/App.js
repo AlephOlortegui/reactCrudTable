@@ -7,6 +7,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Header from './Comp/Header';
 import Table from './Comp/Table';
 import NotFound from './Utilities/NotFound';
+import Detail from './Crud/Detail';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<Table />}/>
+            <Route path='/details/:id' element={<Detail />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>

@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 import useFetch from "../Custom/useFetch"
 import AlertMsg from "../Utilities/AlertMsg"
 import Spinner from "../Utilities/Spinner"
 
 const Table = () => {
-  const {data, isPending, error} = useFetch('http://localhost:8000/employeee')
+  const {data, isPending, error} = useFetch('http://localhost:8000/employee')
   return (
     <>
       <div className="row justify-content-between align-items-center my-4">
@@ -23,7 +24,13 @@ const Table = () => {
         </thead>
         <tbody>
            {/* some data from json-server */}
-           {isPending ? (<Spinner />) : error ? (
+           {isPending ? (
+            <tr>
+              <td colSpan={5}>
+                <Spinner />
+              </td>
+            </tr>
+           ) : error ? (
             <tr>
               <td colSpan={5}>
                 <AlertMsg />
@@ -38,9 +45,9 @@ const Table = () => {
                       <td>{row.email}</td>
                       <td>{row.phone}</td>
                       <td>
-                          <button className="btn btn-primary btn-sm">
+                          <Link to={`/details/${row.id}`} className="btn btn-primary btn-sm">
                               <i className="bi bi-info-circle-fill"></i>
-                          </button>
+                          </Link>
                       </td>
                   </tr>
                 ))}
