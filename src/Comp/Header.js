@@ -6,7 +6,7 @@ import ThemeBtn from "./ThemeBtn"
 const Header = () => {
   return (
     <header className='d-flex justify-content-around align-items-center'>
-      <Title level="h3">Crud Operations</Title>
+      <Title level="h3" className="mb-0">Crud Operations</Title>
       <nav className="ms-auto me-4">
        {/*  <Link className='mx-3' to="/">Home</Link>
         <Link className='mx-3' to="/create">Create</Link> */}

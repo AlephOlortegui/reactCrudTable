@@ -17,7 +17,7 @@ function App() {
     <ThemeProvider>
       <BrowserRouter>
         <div className="bg-theme py-3">
-          <div className="crud-container text-center mx-auto">
+          <div className="crud-container text-center mx-3 mx-md-auto">
             <Header />
             <div className="container">
               <Routes>
