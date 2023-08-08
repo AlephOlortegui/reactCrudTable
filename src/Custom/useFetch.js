@@ -4,14 +4,14 @@ const useFetch = (uri, setSomething=null) => {
   const [data, setData] = useState(null)
   const [isPending, setIsPending] = useState(true)
   const [error, setError] = useState(false)
-  console.log(typeof setSomething) // object
+  //console.log(typeof setSomething) // object
 
   useEffect(() => {
 
     const fetchData = async (uri) => { 
       try {
         let res = await fetch(uri)
-        console.log(res)
+        //console.log(res)
           if(!res.ok){
             throw Error('could not fetch the data for that resource')
           } //throw break the try block

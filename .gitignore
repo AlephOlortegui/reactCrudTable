@@ -12,7 +12,8 @@
 /build
 
 # mines
-/src/data/*.json
+/src/data/*
+*docx
 
 # misc
 .DS_Store

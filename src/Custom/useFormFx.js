@@ -27,10 +27,7 @@ const useFormFx = (uri, mthd, thisPage) => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(body)
         })
-        .then(() => {
-            console.log('handle Submit')
-            navigateTo(thisPage)
-        })
+        .then(() => navigateTo(thisPage))
   }
 
   return {
