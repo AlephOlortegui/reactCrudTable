@@ -27,3 +27,29 @@ ThemeContext and ThemeProvider in the same component it crashes the app.
 - dependencie array un useFormFx, I put the whole code inside of
 useEffect
 
+
+# useReducer and LS problem
+- I did:
+```bash
+  const [isDark, dispatch] = useReducer(ThemeReducer, null, ()=>{
+    const LS_theme = localStorage.getItem('theme');
+    return LS_theme ? Boolean(LS_theme) : false;
+  })
+```
+- and everytime I refreshed the page "isDArk" was true all the time
+- [FCC](https://www.freecodecamp.org/news/javascript-string-to-boolean/)
+
+## ChatGPT
+
+- By using null as the second argument to useReducer, you allow the reducer to use the value 
+returned by the initializer function (the third argument) as the initial state. This ensures 
+that the value from localStorage will be correctly used to initialize isDark without any 
+implicit conversions to true.
+
+- inspect the page and do
+```bash
+  console.log(Boolean("false")) = true!
+```
+### How to Parse a String to a Boolean with the Identity Operator (===)
+- [FCC](https://www.freecodecamp.org/news/javascript-string-to-boolean/)
+
